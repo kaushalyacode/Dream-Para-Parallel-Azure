@@ -1,0 +1,20 @@
+
+void setup()
+{
+  pinMode(13, OUTPUT);  //LED Bulb
+  pinMode(8, INPUT);   //PIR Sensor
+ 
+}
+
+void loop()
+{
+  int val = digitalRead(8);
+  if(val == 1){
+    digitalWrite(13, HIGH); //When something goes over the pir sensor,the bulb light up
+  }
+  else{
+    digitalWrite(13, LOW);  //If nothing goes over the pir sensor,the bulb will not light up
+  }
+    
+ 
+}
