@@ -358,7 +358,7 @@ session_start();
                                     ?>
                                     <a href="customer-post-add.php" class="nav-link">
                                         <i class="fa fa-paper-plane"></i>
-                                          Post Your Address
+                                          Post Your Ad
                                     </a>
                                     <a href="customer-account.php" class="nav-link active">
                                         <i class="fa fa-user"></i> 

@@ -334,10 +334,26 @@ session_start();
                         -->
                         <div class="card sidebar-menu">
                             <div class="card-header">
-                                <h3 class="h4 card-title">Customer section</h3>
+                                <h3 class="h4 card-title">Land Loard section</h3>
                             </div>
                             <div class="card-body">
-                                <ul class="nav nav-pills flex-column"><a href="customer-orders.php" class="nav-link active"><i class="fa fa-list"></i> Purchase History</a><a href="customer-wishlist.php" class="nav-link"><i class="fa fa-heart"></i> My wishlist</a><a href="customer-account.php" class="nav-link"><i class="fa fa-user"></i> My account</a><a href="index.php" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></ul>
+                                <ul class="nav nav-pills flex-column">
+                                <a href="customer-post-add.php" class="nav-link">
+                                        <i class="fa fa-paper-plane"></i>
+                                          Post Your Ad
+                                    </a>
+                                    <a href="customer-account.php" class="nav-link ">
+                                        <i class="fa fa-user"></i> 
+                                             My account
+                                    <a href="customer-ad-info.php" class="nav-link active">
+                                        <i class="fa fa-address-card-o"></i>
+                                             Ad Info
+                                    </a>
+                                    <a href="./Controller/LogoutController.php?Logout=ok" class="nav-link">
+                                        <i class="fa fa-sign-out"></i>
+                                            Logout
+                                    </a>
+                                </ul>
                             </div>
                         </div>
                         <!-- /.col-lg-3-->
@@ -345,8 +361,8 @@ session_start();
                     </div>
                     <div id="customer-orders" class="col-lg-9">
                         <div class="box">
-                            <h1>Purchase History</h1>
-                            <p class="lead">Your Reservations  on one place.</p>
+                            <h1>Published Advertisement Information</h1>
+                            <p class="lead">Your publications  on one place.</p>
                             <p class="text-muted">If you have any questions, please feel free to <a href="contact.php">contact us</a>, our customer service center is working for you 24/7.</p>
                             <hr>
                             <div class="table-responsive">
@@ -376,19 +392,30 @@ session_start();
                                             ?>
                                                <td><span class="badge badge-warning">
                                                <?php
-                                            echo "waiting";
+                                            echo "Advance payed";
                                             ?>
                                             </span></td>
                                             <?php
-                                            }else{
+                                            }elseif($row['isActive']=='1'){
                                             ?>
                                                 <td><span class="badge badge-success">
                                                 <?php
 
-                                              echo "reserved";
+                                              echo "completed";
                                               ?>
                                                      </span></td>
                                                      <?php
+                                            }else{
+                                            ?>
+
+                                             <td><span class="badge badge-danger">
+                                                <?php
+
+                                              echo "Not touched";
+                                              ?>
+                                                     </span></td>
+
+                                            <?php
                                             }
                                             
                                             ?>
